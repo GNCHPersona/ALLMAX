@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% block title %}Образовательная и карьерная релокация - Allmax{% endblock %}
+
+{% block head_extra %}
+    {# Стили, нужные ТОЛЬКО для страницы релокации #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_intro.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_forms.css') }}">       {# Стили для селектов и лейблов #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_cards.css') }}">       {# Стили для карточек .details-item #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_relocation-select.css') }}"> {# Стили для блока выбора стран/типа, кнопки "я здесь", инфо-блока, анимации селекторов #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_details-sections.css') }}"> {# Стили для секций вакансий/вузов (.details-section) #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/_relocation.css') }}"> #} {# Если будут уникальные стили #}
+{% endblock %}
+
+{% block content %}
+    <section class="intro-section intro-section--service"> {# Оставляем --service если нужны доп. стили #}
+      {# Используем ОБЩИЙ .container для центрирования и отступов #}
+      <div class="container">
+        <div class="intro-section__content animate-on-scroll animate-zoom">
+          <h1>Образовательная и карьерная релокация</h1>
+          <p>Ваш путь к международному образованию и карьере начинается здесь. Мы предлагаем комплексное сопровождение, актуальные вакансии и информацию о поступлении в ВУЗы России и Беларуси.</p>
+          {# Можно добавить кнопку, если нужно #}
+          {# <a href="#contact" class="cta-btn">Узнать больше</a> #}
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Подробности услуги" (Оставляем как есть, если стили .service-details__content и списков подходят из _typography.css) -->
+    <section class="service-details-section">
+       <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">01</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Что включает услуга</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+        {# Используем стандартные стили списков из _typography.css #}
+        <div class="service-details__content animate-on-scroll animate-slide-up">
+            <p>Наша услуга "Образовательная и карьерная релокация" разработана для тех, кто стремится получить качественное образование или построить карьеру в России и Беларуси. Мы берем на себя все хлопоты, связанные с переездом и адаптацией, чтобы вы могли сосредоточиться на своих целях.</p>
+            <h3>Наши ключевые направления:</h3>
+            <ul>
+              <li><strong>Консультации экспертов:</strong> Персональные консультации по выбору учебного заведения, программы обучения или вакансии, а также по всем вопросам релокации.</li>
+              <li><strong>Подготовка документов:</strong> Полный пакет документов для поступления в учебные заведения или трудоустройства, включая переводы и нотариальное заверение.</li>
+              <li><strong>Визовая поддержка:</strong> Содействие в оформлении всех типов виз, необходимых для обучения или работы в России и Беларуси.</li>
+              <li><strong>Помощь в адаптации:</strong> Поддержка на первых этапах пребывания в новой стране: поиск жилья, оформление необходимых документов, помощь в интеграции в культурную и социальную среду.</li>
+              <li><strong>Карьерное консультирование:</strong>  Для тех, кто ищет работу – помощь в составлении резюме, подготовке к собеседованиям и поиске подходящих вакансий.</li>
+              <li><strong>Образовательное консультирование:</strong> Для поступающих – помощь с выбором ВУЗа и программы, подготовка к вступительным испытаниям (при необходимости).</li>
+            </ul>
+            <p>Мы понимаем, что релокация – это важный и ответственный шаг. Поэтому наша команда профессионалов готова предоставить вам всестороннюю поддержку и сделать ваш переезд максимально комфортным и успешным.</p>
+        </div>
+      </div>
+    </section>
+
+   <!-- Секция выбора стран и деталей -->
+    <section class="relocation-country-select-section">
+      <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">02</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+             {# Убедимся что классы и структура верны #}
+            <div class="headline headline--relocation-type">
+              <h2>Выберите условия для
+                <div class="relocation-type-select-wrapper">
+                  <select id="relocation-type" class="relocation-type-select"> {# Проверяем классы #}
+                    {% for code, name in relocation_types.items() %}
+                      <option value="{{ code }}" {% if code == 'career' %}selected{% endif %}>{{ name }}</option>
+                    {% endfor %}
+                  </select>
+                  <div class="select-arrow select-arrow--relocation-type"></div> {# Проверяем классы #}
+                </div>
+              </h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Контейнер для селекторов -->
+        <div id="country-select-holder" class="country-select-holder animate-on-scroll animate-slide-up">
+          <!-- Селектор "Из страны" -->
+          <div class="country-select-wrapper" id="source-country-wrapper">
+            <label for="source-country" class="country-select-label">Из страны:</label>
+            <div class="select-wrapper">
+              <select id="source-country" class="country-select"> {# Проверяем класс #}
+                 <option value="">{{ country_names.get('', 'Выберите страну') }}</option>
+                 {% for code, name in source_countries_options.items() %}
+                   <option value="{{ code }}">{{ name }}</option>
+                 {% endfor %}
+              </select>
+              <div class="select-arrow"></div> {# Проверяем класс #}
+            </div>
+          </div>
+
+          <!-- Селектор "В страну" -->
+          <div class="country-select-wrapper" id="destination-country-wrapper">
+            <label for="destination-country" class="country-select-label">В страну:</label>
+            <div class="select-wrapper">
+              <select id="destination-country" class="country-select"> {# Проверяем класс #}
+                 <option value="">{{ country_names.get('', 'Выберите страну') }}</option>
+                 {% for code, name in destination_countries_options.items() %}
+                   <option value="{{ code }}">{{ name }}</option>
+                 {% endfor %}
+              </select>
+              <div class="select-arrow"></div> {# Проверяем класс #}
+            </div>
+          </div>
+        </div>
+
+      <!-- Кнопка "Я уже здесь" -->
+        <div class="already-here-button-container animate-on-scroll animate-fade">
+             <button id="already-here-button" class="already-here-button"> {# Проверяем класс #}
+                 Я уже живу в стране назначения
+             </button>
+        </div>
+
+        <!-- Блок информации о релокации -->
+        <div id="relocation-info" class="relocation-info animate-on-scroll animate-fade" style="display: none;">
+          <div class="relocation-info__inner">
+            <a href="#" id="scroll-to-details-button" class="scroll-to-details-button" style="display: none;">
+              <i class="fas fa-arrow-down"></i>
+            </a>
+            <h3 class="relocation-info__title">Информация (<span id="relocation-type-display"></span>): <span id="source-country-display"></span> → <span id="destination-country-display"></span></h3>
+            <div class="relocation-info__details">
+              <p><strong>Цена:</strong> <span id="relocation-price"></span></p>
+              <p><strong>Необходимые документы:</strong> <ul id="relocation-documents"></ul></p>
+            </div>
+            <a href="#contact" class="cta-btn relocation-cta">Оформить заявку на релокацию</a>
+          </div>
+        </div>
+
+        <!-- Секция Вакансий -->
+        <section id="vacancies-section" class="details-section animate-on-scroll animate-fade" style="display: none;">
+            <h3 class="details-section__title">Доступные вакансии (<span id="destination-country-vacancies-display"></span>)</h3>
+            <div id="vacancy-list" class="details-list">
+                <!-- Динамический контент -->
+            </div>
+            <p id="no-vacancies-message" class="no-details-message" style="display: none;">Для выбранной страны пока нет доступных вакансий.</p>
+        </section>
+
+        <!-- Секция ВУЗов -->
+        <section id="education-section" class="details-section animate-on-scroll animate-fade" style="display: none;">
+            <h3 class="details-section__title">Доступные ВУЗы (<span id="destination-country-education-display"></span>)</h3>
+            <div id="education-list" class="details-list">
+                <!-- Динамический контент -->
+            </div>
+            <p id="no-education-message" class="no-details-message" style="display: none;">Для выбранной страны пока нет информации о ВУЗах.</p>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- Секция "Почему выбирают нас" -->
+    <section class="why-choose-us-section">
+       <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">03</span> {# Проверяем порядковый номер #}
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Почему выбирают Allmax</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+        {# Используем стандартные стили списков из _typography.css #}
+        <div class="why-choose-us__content animate-on-scroll animate-slide-up">
+           <p>Выбирая Allmax для образовательной и карьерной релокации, вы получаете надежного партнера, который ценит ваше время и стремится к вашему успеху.</p>
+           <ul>
+             <li><strong>Опыт и экспертиза:</strong>  Многолетний опыт работы в сфере международной релокации и образования.</li>
+             <li><strong>Индивидуальный подход:</strong>  Мы учитываем ваши личные цели и потребности, предлагая решения, разработанные специально для вас.</li>
+             <li><strong>Комплексное сопровождение:</strong>  Полный спектр услуг от консультации до адаптации на новом месте.</li>
+             <li><strong>Профессиональная команда:</strong>  В нашей команде работают опытные юристы, консультанты по образованию и карьере, переводчики и специалисты по визовой поддержке.</li>
+             <li><strong>Актуальная информация:</strong> Мы предоставляем доступ к проверенным вакансиям и информации о ВУЗах в странах назначения.</li>
+             <li><strong>Гарантия качества:</strong>  Мы стремимся предоставлять услуги высочайшего качества и гарантируем результат.</li>
+           </ul>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+  {# Передаем данные из Python в JavaScript через JSON строку #}
+  <script id="relocation-config" type="application/json">
+    {{ relocation_config_json | safe }}
+  </script>
+  {# Подключаем скрипт, специфичный для этой страницы #}
+  <script src="{{ url_for('static', filename='js/relocation.js') }}"></script>
+{% endblock %}

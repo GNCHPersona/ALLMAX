@@ -1,0 +1,13 @@
+/* static/css/base/_utilities.css */
+/* Вспомогательные классы */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Адаптивность для .container */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+}

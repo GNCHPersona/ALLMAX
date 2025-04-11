@@ -1,0 +1,43 @@
+/* static/css/sections/_details-sections.css */
+/* Общие стили для секций с деталями (Вакансии/ВУЗы) */
+
+.details-section {
+    padding: 60px 0;
+    /* background-color: var(--color-gray-dark); */ /* Можно раскомментировать для чередования фона */
+    border-top: 1px solid #eee;
+    margin-top: 50px; /* Отступ от блока релокации */
+}
+
+.details-section__title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--color-black);
+}
+
+.details-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 45px;
+    max-width: 1200px; /* Ограничение ширины */
+    margin: 0 auto; /* Центрирование */
+    padding: 0 20px; /* Отступы по бокам */
+}
+
+/* Стили для .details-item находятся в _cards.css */
+/* Стили для .details-item__link находятся в _buttons.css */
+
+/* Сообщение "нет деталей" */
+.no-details-message {
+    font-size: 17px;
+    text-align: center;
+    margin-top: 20px; /* Отступ если список пуст */
+    color: #777; /* Мягкий цвет */
+}
+
+/* Адаптивность секций деталей */
+@media (max-width: 768px) {
+  .details-section__title { font-size: 24px; }
+  .details-list { grid-template-columns: 1fr; padding: 0 15px; }
+}

@@ -1,0 +1,39 @@
+/* static/css/sections/_showcase.css */
+/* Стили для секции Showcase (сетка, контейнер) */
+
+.showcase-section {
+  /* padding и background заданы в _general-sections.css */
+}
+
+.showcase-section__container {
+  max-width: 1440px; /* Чуть шире */
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  gap: 40px;
+}
+
+/* Стили для .showcase-item находятся в _cards.css */
+
+/* Ссылка-обертка для карточки */
+.showcase-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.showcase-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Адаптивность сетки Showcase */
+@media (max-width: 768px) {
+  .showcase {
+    grid-template-columns: 1fr; /* Одна карточка в ряду */
+    gap: 30px;
+  }
+}

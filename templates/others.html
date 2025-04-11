@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}Прочие услуги - Allmax{% endblock %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_intro.css') }}">
+    {# Стили для service-details и why-choose-us секций (если нужны особые) #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_service-details.css') }}"> #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_why-choose-us.css') }}"> #}
+    {# Общие стили для списков уже есть в _typography.css #}
+{% endblock %}
+
+
+{% block content %}
+    <!-- Intro Section для страницы "Прочие услуги" -->
+
+    <section class="intro-section intro-section--service"> {# Оставляем --service если нужны доп. стили #}
+      {# Используем ОБЩИЙ .container для центрирования и отступов #}
+      <div class="container">
+        <div class="intro-section__content animate-on-scroll animate-zoom">
+          <h1>Прочие услуги</h1>
+          <p>Не нашли нужную услугу в списке?  Allmax предлагает ряд дополнительных сервисов для поддержки вашей карьеры и образования за рубежом.  Свяжитесь с нами, чтобы узнать больше!</p>
+          {# Можно добавить кнопку, если нужно #}
+          {# <a href="#contact" class="cta-btn">Узнать больше</a> #}
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Наши Прочие услуги" -->
+    <section class="service-details-section">
+      <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">01</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Наши прочие услуги</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-details__content animate-on-scroll animate-slide-up">
+          <p>Помимо основных направлений, Allmax предлагает ряд дополнительных услуг, призванных сделать ваш переезд, обучение или работу за рубежом максимально комфортными и успешными.</p>
+          <h3>Мы предлагаем следующие прочие услуги:</h3>
+          <ul>
+            <li>
+              <h4><i class="fas fa-file-alt"></i>  Легализация и апостилирование документов</h4>
+              <p>Подготовка и легализация документов для использования за рубежом, включая проставление апостиля.  Ускорим процесс и избавим вас от бюрократических хлопот.</p>
+            </li>
+            <li>
+              <h4><i class="fas fa-house-user"></i>  Помощь в поиске жилья</h4>
+              <p>Подбор вариантов проживания в России и Беларуси с учетом ваших предпочтений и бюджета.  От общежитий до квартир и апартаментов – найдем оптимальное решение.</p>
+            </li>
+            <li>
+              <h4><i class="fas fa-plane"></i>  Организация поездок и трансферов</h4>
+              <p>Бронирование авиа- и ж/д билетов, организация трансферов из аэропорта/вокзала и обратно.  Сделаем ваше прибытие и перемещение по стране максимально удобным.</p>
+            </li>
+            <li>
+              <h4><i class="fas fa-handshake"></i>  Консультации по адаптации и интеграции</h4>
+              <p>Информационная поддержка и консультации по вопросам адаптации к жизни в новой стране, культурным особенностям и интеграции в общество.</p>
+            </li>
+            <li>
+              <h4><i class="fas fa-user-md"></i>  Оформление медицинской страховки</h4>
+              <p>Подбор и оформление полисов медицинского страхования, соответствующих требованиям для обучения, работы и проживания в России и Беларуси.</p>
+            </li>
+            <li>
+              <h4><i class="fas fa-comments"></i>  Устные и письменные консультации по любым вопросам</h4>
+              <p>Предоставляем консультации по любым вопросам, связанным с переездом, обучением, работой и жизнью в России и Беларуси.  Наша команда готова помочь вам в любой ситуации.</p>
+            </li>
+          </ul>
+          <p>Если вы не нашли в списке нужную вам услугу – свяжитесь с нами!  Вероятно, мы сможем вам помочь в индивидуальном порядке.  Allmax – ваш надежный партнер в решении любых вопросов, связанных с международной карьерой и образованием.</p>
+          <a href="#contact" class="cta-btn">Связаться для уточнения услуг</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Секция "Почему выбирают Allmax для прочих услуг" -->
+    <section class="why-choose-us-section">
+      <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">02</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Почему выбирают Allmax для прочих услуг</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+        <div class="why-choose-us__content animate-on-scroll animate-slide-up">
+          <p>Даже если ваш запрос выходит за рамки стандартных услуг, Allmax готов предложить вам поддержку и найти решение.  Мы ценим каждого клиента и стремимся помочь в любой ситуации.</p>
+          <ul>
+            <li><strong>Индивидуальный подход:</strong>  Мы внимательно рассматриваем каждый запрос и предлагаем решения, разработанные с учетом ваших уникальных потребностей.</li>
+            <li><strong>Широкий спектр возможностей:</strong>  Наша сеть партнеров и опыт позволяют нам решать самые разнообразные задачи, даже нестандартные.</li>
+            <li><strong>Комплексная поддержка:</strong>  Мы стремимся обеспечить полное сопровождение на всех этапах, не ограничиваясь стандартным набором услуг.</li>
+            <li><strong>Ориентация на результат:</strong>  Наша главная цель – помочь вам достичь успеха, независимо от сложности задачи.</li>
+            <li><strong>Надежность и доверие:</strong>  Многолетний опыт и положительная репутация делают Allmax надежным партнером в любых вопросах.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+{% endblock %}

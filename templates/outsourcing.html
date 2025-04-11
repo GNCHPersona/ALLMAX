@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% block title %}Подбор персонала - Allmax{% endblock %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_intro.css') }}">
+    {# Стили для service-details и why-choose-us секций (если нужны особые) #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_service-details.css') }}"> #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_why-choose-us.css') }}"> #}
+    {# Общие стили для списков уже есть в _typography.css #}
+{% endblock %}
+
+{% block content %}
+    <!-- Intro Section для страницы услуги Аутсорсинг -->
+    <section class="intro-section intro-section--service"> {# Оставляем --service если нужны доп. стили #}
+      {# Используем ОБЩИЙ .container для центрирования и отступов #}
+      <div class="container">
+        <div class="intro-section__content animate-on-scroll animate-zoom">
+          <h1>Подбор Персонала</h1>
+          <p>Оптимизируйте бизнес-процессы и сократите издержки с помощью наших профессиональных услуг Подбора Персонала. Мы предлагаем решения для различных задач.</p>
+          {# Можно добавить кнопку, если нужно #}
+          {# <a href="#contact" class="cta-btn">Узнать больше</a> #}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Секция "Подробности услуги Подбор персонала" -->
+    <section class="service-details-section">
+      <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">01</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Что включает услуга подбора персонала</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-details__content animate-on-scroll animate-slide-up">
+          <p>Наша услуга "Подбор персонала" предназначена для компаний, которым нужны квалифицированные сотрудники, соответствующие их культуре и задачам. Мы предлагаем комплексный подход к поиску и привлечению лучших талантов.</p>
+          <h3>Ключевые направления подбора персонала от Allmax:</h3>
+          <ul>
+            <li>
+              <h4><i class="fas fa-search"></i> Поиск кандидатов: Активный поиск и привлечение лучших специалистов</h4>
+              <p>Мы используем современные методы и ресурсы для поиска кандидатов, соответствующих вашим требованиям, включая профессиональные сети, базы данных и прямые обращения.</p>
+            </li>
+            <li>
+              <h4><i class="fas fa-file-alt"></i> Оценка кандидатов: Тщательная оценка навыков и соответствия культуре компании</h4>
+              <p>Мы проводим всестороннюю оценку кандидатов, включая анализ резюме, интервью, тестирование и проверку рекомендаций, чтобы убедиться в их квалификации и соответствии вашим требованиям.</p>
+            </li>
+            <li>
+              <h4><i class="fas fa-handshake"></i> Сопровождение трудоустройства:  Поддержка на всех этапах, от собеседования до адаптации</h4>
+              <p>Мы оказываем поддержку кандидатам и компаниям на всех этапах трудоустройства, включая организацию собеседований, оформление документов и помощь в адаптации нового сотрудника.</p>
+            </li>
+          </ul>
+          <p>Мы гарантируем конфиденциальность, соблюдение сроков и ориентацию на результат. Доверьте поиск лучших сотрудников профессионалам Allmax и сосредоточьтесь на развитии своего бизнеса.</p>
+          <a href="#contact" class="cta-btn">Заказать подбор персонала</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Подробно о поиске IT-специалистов" -->
+    <section class="detailed-service-section-1 detailed-service-section--it-outsourcing">
+      <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">02</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Подробнее о подборе IT-специалистов</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailed-service__content animate-on-scroll animate-slide-up">
+          <p>Allmax специализируется на подборе высококвалифицированных IT-специалистов для решения задач любой сложности. Мы знаем, где найти лучших разработчиков, инженеров и менеджеров в сфере информационных технологий.</p>
+          <h3>Наши услуги в рамках подбора IT-специалистов:</h3>
+          <ul>
+            <li><strong>Поиск разработчиков:</strong>  Frontend, backend, fullstack разработчики с опытом работы с различными языками и технологиями.</li>
+            <li><strong>Подбор инженеров:</strong>  Сетевые инженеры, системные администраторы, DevOps-инженеры, специалисты по кибербезопасности.</li>
+            <li><strong>Поиск менеджеров:</strong>  IT-директора, руководители проектов, менеджеры по продукту, бизнес-аналитики.</li>
+            <li><strong>Оценка технических навыков:</strong>  Профессиональное тестирование и оценка технических навыков кандидатов для подтверждения их квалификации.</li>
+            <li><strong>Адаптация IT-специалистов:</strong>  Помощь в адаптации новых сотрудников к корпоративной культуре и рабочим процессам.</li>
+          </ul>
+          <p>Мы гарантируем высокий уровень сервиса, оперативность и индивидуальный подход к каждому клиенту.  Доверьте поиск IT-специалистов профессионалам Allmax!</p>
+          <a href="#contact" class="cta-btn">Оставить заявку на подбор IT-специалиста</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Подробно о подборе персонала в других сферах" -->
+    <section class="detailed-service-section detailed-service-section--personnel-outsourcing">
+      <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">03</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Подробнее о подборе персонала в других сферах</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailed-service__content animate-on-scroll animate-slide-up">
+          <p>Allmax успешно осуществляет подбор персонала не только в сфере IT, но и в других ключевых направлениях бизнеса.  Мы предлагаем решения для кадрового обеспечения предприятий любого масштаба и профиля деятельности.</p>
+          <h3>Мы осуществляем подбор персонала в следующих сферах:</h3>
+          <ul>
+            <li><strong>Производство и инженерия:</strong>  Инженеры, технологи, операторы станков с ЧПУ, рабочие.</li>
+            <li><strong>Продажи и маркетинг:</strong>  Менеджеры по продажам, маркетологи, специалисты по рекламе и PR.</li>
+            <li><strong>Финансы и бухгалтерия:</strong>  Бухгалтеры, экономисты, финансовые аналитики, аудиторы.</li>
+            <li><strong>Административный персонал:</strong>  Секретари, офис-менеджеры, ассистенты, юристы, HR-специалисты.</li>
+            <li><strong>Транспорт и логистика:</strong>  Водители, логисты, экспедиторы, кладовщики.</li>
+          </ul>
+          <p>С Allmax вы получаете надежного партнера в кадровом обеспечении, который поможет вам быстро и эффективно найти квалифицированных сотрудников для решения любых бизнес-задач.</p>
+          <a href="#contact" class="cta-btn">Оставить заявку на подбор персонала</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Почему выбирают нас для подбора персонала" -->
+    <section class="why-choose-us-section">
+      <div class="container">
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">04</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Почему выбирают Allmax для подбора персонала</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+        <div class="why-choose-us__content animate-on-scroll animate-slide-up">
+          <p>Выбирая Allmax в качестве партнера по подбору персонала, вы получаете доступ к нашей экспертизе и ряду преимуществ, которые помогут вам быстро и эффективно укомплектовать штат:</p>
+          <ul>
+            <li><strong>Большой опыт в рекрутинге:</strong>  Мы обладаем многолетним опытом успешного подбора персонала в различных отраслях.</li>
+            <li><strong>Индивидуальный подход:</strong>  Мы тщательно изучаем ваши требования и предлагаем решения, разработанные специально для вас.</li>
+            <li><strong>Широкая база кандидатов:</strong>  Мы имеем доступ к обширной базе квалифицированных специалистов.</li>
+            <li><strong>Экономия времени и ресурсов:</strong>  Передайте задачу подбора нам и сосредоточьтесь на развитии бизнеса.</li>
+            <li><strong>Гарантия качества и надежности:</strong>  Мы несем ответственность за результат и гарантируем, что найдем для вас лучших кандидатов.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+{% endblock %}

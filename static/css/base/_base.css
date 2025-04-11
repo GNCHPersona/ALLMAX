@@ -1,0 +1,26 @@
+/* static/css/base/_base.css */
+/* Базовые стили, переменные, стили body/html */
+
+:root {
+  --color-black: #333; /* Темно-серый (для заголовков и других важных элементов) */
+  --color-gray-dark: #f2f2f2; /* Светло-серый (для секций и фона карточек) */
+  --color-gray-light: #fff; /* Белый (основной фон) */
+  --color-red: #E74C3C; /* Красный (акцент) */
+  --color-text: #444; /* Основной цвет текста (темно-серый) */
+}
+
+html {
+  scroll-behavior: smooth; /* Для плавной прокрутки по якорям */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--color-gray-light); /* Белый фон по умолчанию */
+  color: var(--color-text); /* Темно-серый текст */
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

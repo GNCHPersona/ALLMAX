@@ -1,0 +1,51 @@
+/* static/css/sections/_about.css */
+
+.about-section {
+  /* padding и background заданы в _general-sections.css */
+}
+
+.about-section__holder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-section__content {
+  text-align: left;
+}
+
+/* Стили для p, ul, li внутри .about-section__entry-text заданы в _typography.css */
+.about-section__entry-text p {
+   font-size: 19px; /* Можно переопределить если нужно */
+   color: #777;
+   line-height: 1.8;
+   margin-bottom: 25px;
+}
+
+.about-section__visual {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.about-section__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 4/3; /* Соотношение сторон для картинки */
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .about-section__holder {
+        grid-template-columns: 1fr; /* В столбик */
+        gap: 40px;
+    }
+    .about-section__content {
+        text-align: center; /* Центрируем текст */
+    }
+    .about-section__visual {
+        order: -1; /* Картинка сверху */
+    }
+}

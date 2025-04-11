@@ -1,0 +1,91 @@
+/* static/css/components/_forms.css */
+/* Стили для элементов форм: select, label и т.д. */
+
+/* Лейбл для селектора */
+.country-select-label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 10px;
+}
+
+/* Обертка для select и стрелки */
+.select-wrapper {
+  position: relative;
+}
+
+/* Базовые стили select */
+select.country-select,
+select.relocation-type-select
+{
+  appearance: none; /* Убираем стандартный вид */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 15px 40px 15px 20px; /* Отступы + место для стрелки */
+  font-size: 17px;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-gray-light);
+  color: var(--color-text);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  background-image: none; /* Убираем стандартную стрелку в некоторых браузерах */
+  background-repeat: no-repeat;
+  background-position: right 15px center; /* Позиция кастомной стрелки (если будем делать через background) */
+}
+select.country-select:focus,
+select.relocation-type-select:focus {
+  outline: none;
+  border-color: var(--color-red);
+}
+
+/* Кастомная стрелка для select (вариант через псевдоэлемент) */
+.select-arrow {
+  content: ''; /* Или используем псевдоэлемент :after на .select-wrapper */
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--color-text);
+  pointer-events: none; /* Стрелка не должна быть кликабельной */
+}
+
+/* Стили для обертки селекта типа релокации */
+.relocation-type-select-wrapper {
+  position: relative; /* Для позиционирования стрелки */
+  display: inline-block;
+  vertical-align: middle; /* Выравнивание с текстом заголовка */
+}
+
+/* Специфичные стили для select'а типа релокации */
+select.relocation-type-select {
+  padding: 8px 30px 8px 15px; /* Уменьшенные отступы */
+  font-size: inherit; /* Наследуем размер от родителя (h2) */
+  font-family: 'Montserrat', sans-serif; /* Шрифт как у заголовка */
+  font-weight: bold;
+  color: var(--color-black);
+  background-color: #f7c671; /* Мягкий оранжевый фон */
+  border: none; /* Убираем рамку */
+  width: auto; /* Авто ширина */
+}
+
+/* Стрелка для select'а типа релокации */
+.select-arrow--relocation-type {
+  /* Позиционируется относительно .relocation-type-select-wrapper */
+  right: 10px; /* Сдвигаем правее */
+  border-top-color: var(--color-black); /* Цвет стрелки */
+}
+
+/* Адаптивность для форм */
+@media (max-width: 768px) {
+  .country-select-label {
+      text-align: center;
+  }
+}

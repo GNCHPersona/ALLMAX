@@ -1,0 +1,196 @@
+{% extends 'base.html' %} {# Наследуем базовый шаблон #}
+
+{% block title %}Allmax - Работа и Учёба в России и Беларуси{% endblock %} {# Устанавливаем заголовок #}
+
+{% block head_extra %}
+    {# Стили, нужные ТОЛЬКО для главной страницы #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_intro.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_cards.css') }}"> {# Для .showcase-item и .testimonial-block #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_showcase.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_testimonials.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_about.css') }}">
+{% endblock %}
+
+
+{% block content %} {# Вставляем уникальный контент главной страницы #}
+
+  <!-- Intro Section -->
+  <section id="intro" class="intro-section">
+    <div class="intro-section__container container"> {# Добавляем класс .container для центрирования и отступов #}
+      <div class="intro-section__content animate-on-scroll animate-zoom">
+        <h1>Работа и Учёба в России и Беларуси</h1>
+        <p>Мы помогаем осуществить мечты о международной карьере и образовании, предоставляя профессиональные услуги и поддержку на каждом этапе.</p>
+        {# Кнопка может вести к секции услуг #}
+        <a href="#services" class="cta-btn">Узнать больше</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase (услуги) Section -->
+  <section id="services" class="showcase-section">
+    {# Убедимся что контейнер есть и правильный класс используется #}
+    <div class="showcase-section__container container">
+      <div class="site-offset-holder animate-on-scroll animate-fade">
+        <div class="site-offset site-offset--left">
+          <div class="section-counter">
+            <span class="section-counter__text">01</span>
+          </div>
+        </div>
+        <div class="site-offset site-offset--right">
+          <div class="headline">
+            <h2>Наши Услуги</h2>
+            <span class="animated-border"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase"> {# Проверяем класс сетки #}
+        <!-- Услуга 1: Образовательная и карьерная релокация -->
+        <a href="{{ url_for('relocation_page') }}" class="showcase-link">
+          <div class="showcase-item animate-on-scroll animate-slide-up"> {# Проверяем класс карточки #}
+            <div class="showcase-item__heading" style="min-height: 60px;">
+              <h3 class="showcase-item__title">Образовательная и карьерная релокация</h3>
+            </div>
+            <div class="showcase-item__visual">
+              <img src="{{ url_for('static', filename='images/relocation2.jpg') }}" alt="Образовательная и карьерная релокация">
+            </div>
+            <div class="showcase-item__description">
+              <div class="showcase-item__work-type">Консультация, Документы, Визы</div>
+              <div class="showcase-item__date">2025</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Услуга 2: Подбор персонала -->
+        <a href="{{ url_for('outsourcing_page') }}" class="showcase-link">
+          <div class="showcase-item animate-on-scroll animate-slide-up">
+            <div class="showcase-item__heading" style="min-height: 60px;">
+              <h3 class="showcase-item__title">Подбор персонала</h3>
+            </div>
+            <div class="showcase-item__visual">
+              <img src="{{ url_for('static', filename='images/outsourcing.jpg') }}" alt="Подбор персонала">
+            </div>
+            <div class="showcase-item__description">
+              <div class="showcase-item__work-type">Профессионалы, Оптимизация</div>
+              <div class="showcase-item__date">2025</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Услуга 3: Перевод документов -->
+        <a href="{{ url_for('translation_page') }}" class="showcase-link">
+          <div class="showcase-item animate-on-scroll animate-slide-up">
+            <div class="showcase-item__heading" style="min-height: 60px;">
+              <h3 class="showcase-item__title">Перевод документов</h3>
+            </div>
+            <div class="showcase-item__visual">
+              <img src="{{ url_for('static', filename='images/translator.jpg') }}" alt="Перевод документов">
+            </div>
+            <div class="showcase-item__description">
+              <div class="showcase-item__work-type">Профессиональный перевод, Любые языки</div>
+              <div class="showcase-item__date">2025</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Услуга 4: Прочие услуги -->
+        <a href="{{ url_for('others_page') }}" class="showcase-link">
+          <div class="showcase-item animate-on-scroll animate-slide-up">
+            <div class="showcase-item__heading" style="min-height: 60px;">
+              <h3 class="showcase-item__title">Прочие услуги</h3>
+            </div>
+            <div class="showcase-item__visual">
+              <img src="{{ url_for('static', filename='images/others.jpg') }}" alt="Прочие услуги">
+            </div>
+            <div class="showcase-item__description">
+              <div class="showcase-item__work-type">Дополнительные сервисы, Поддержка</div>
+              <div class="showcase-item__date">2025</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container"> {# Проверяем .container #}
+      <h2 class="animate-on-scroll animate-fade">Отзывы клиентов</h2>
+      <div class="testimonials-grid"> {# Проверяем класс сетки #}
+        {# В реальном приложении отзывы лучше передавать списком с бэкенда и генерировать циклом #}
+        <div class="testimonial-block animate-on-scroll animate-slide-left"> {# Проверяем класс карточки #}
+          <p class="testimonial-block__quote">"Благодаря Allmax я смог поступить в университет своей мечты. Профессиональный подход и внимательное сопровождение на каждом этапе – выше всяких похвал! Рекомендую всем, кто стремится к международному образованию."</p>
+          <div class="testimonial-block__author-info">
+            <div class="testimonial-block__author-avatar">
+              {# <img src="path/to/avatar1.jpg" alt="Анастасия"> #}
+            </div>
+            <div class="testimonial-block__author-details">
+              <span class="testimonial-block__author-name">Анастасия</span>
+              <span class="testimonial-block__author-position">Студентка</span>
+            </div>
+          </div>
+        </div>
+        {# Остальные отзывы ... #}
+         <div class="testimonial-block animate-on-scroll animate-slide-right">
+          <p class="testimonial-block__quote">"Отличная компания! Все документы были подготовлены быстро и с безупречным качеством. Рекомендую Allmax всем, кто ценит надежность и профессионализм!"</p>
+          <div class="testimonial-block__author-info">
+            <div class="testimonial-block__author-avatar">
+               {# <img src="path/to/avatar2.jpg" alt="Дмитрий"> #}
+            </div>
+            <div class="testimonial-block__author-details">
+              <span class="testimonial-block__author-name">Дмитрий</span>
+              <span class="testimonial-block__author-position">Специалист по маркетингу</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block animate-on-scroll animate-slide-left">
+          <p class="testimonial-block__quote">"Потрясающий сервис! Получил полное сопровождение от первой консультации до момента переезда. Все возникающие вопросы решались оперативно и эффективно. Спасибо команде Allmax за помощь!"</p>
+          <div class="testimonial-block__author-info">
+            <div class="testimonial-block__author-avatar">
+               {# <img src="path/to/avatar3.jpg" alt="Мария"> #}
+            </div>
+            <div class="testimonial-block__author-details">
+              <span class="testimonial-block__author-name">Мария</span>
+              <span class="testimonial-block__author-position">Менеджер по продажам</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {# Управление слайдером отзывов можно добавить в JS, если нужно #}
+      <div class="slider-controls" style="display: none;"> {# Скрываем, т.к. логики слайдера нет #}
+        <button class="slider-button" id="prev-testimonial"><i class="fa fa-chevron-left"></i></button>
+        <button class="slider-button" id="next-testimonial"><i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <!-- Спасибо, Ксю. -->
+  <section id="about" class="about-section">
+    <div class="container"> {# Проверяем .container #}
+       <div class="site-offset-holder animate-on-scroll animate-fade">
+           {# Заголовок для секции About не был добавлен ранее, но его можно добавить по аналогии с другими секциями, если нужно #}
+            <div class="site-offset site-offset--right" style="width: 100%; text-align: center;"> {# Пример простого заголовка #}
+              <div class="headline">
+                <h2>О нас</h2>
+                <span class="animated-border"></span>
+              </div>
+            </div>
+        </div>
+      <div class="about-section__holder">
+        <div class="about-section__content animate-on-scroll animate-slide-left">
+          <div class="about-section__entry-text">
+            <p>Наша фирма специализируется на комплексной подготовке документов, оформлении виз и поступлении в престижные университеты, а также на поиске перспективной работы в России и Беларуси. Мы стремимся помочь каждому клиенту осуществить мечты о международной карьере, обеспечивая максимальный комфорт и поддержку.</p>
+            <p>Мы видим свою миссию в том, чтобы помогать людям открывать новые горизонты в карьере и образовании, предоставляя профессиональное и надежное сопровождение на каждом этапе сотрудничества. Наша цель – ваш успех.</p>
+            <p>Более чем 10 лет успешной работы, сотни довольных клиентов и проверенные временем решения – наш бесценный опыт, который гарантирует качество наших услуг.</p>
+          </div>
+        </div>
+        <div class="about-section__visual animate-on-scroll animate-slide-right">
+          <img src="{{ url_for('static', filename='images/aboutus.jpg') }}" alt="О нас">
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

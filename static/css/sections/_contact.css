@@ -1,0 +1,79 @@
+/* static/css/sections/_contact.css */
+
+.contact-section {
+  /* padding и background заданы в _general-sections.css */
+  text-align: center; /* Центрируем заголовок */
+}
+
+.contact-section__container {
+  /* Использует .container */
+}
+
+.contact-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  margin-bottom: 50px;
+  color: var(--color-black);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center; /* Центрируем блоки */
+  gap: 50px;
+  flex-wrap: wrap; /* Перенос на маленьких экранах */
+}
+
+.info-box {
+  text-align: left; /* Текст внутри блока по левому краю */
+  max-width: 300px; /* Ограничение ширины блока */
+}
+
+.info-box__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.info-box__content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-box__content li {
+  margin-bottom: 10px;
+  padding-left: 0; /* Убираем отступ */
+}
+.info-box__content li::before {
+    display: none; /* Убираем маркер */
+}
+
+/* Стили для ссылок и адреса внутри .info-box__content */
+.info-box__content li a,
+.info-box__content address {
+  font-size: 17px;
+  color: #777;
+  line-height: 1.6;
+  display: block; /* Чтобы занимали всю строку */
+}
+.info-box__content li a:hover {
+    color: var(--color-red);
+}
+
+/* Стиль для address уже задан в _typography.css */
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .contact-section h2 { font-size: 32px; }
+  .contact-info { gap: 30px; }
+  .info-box {
+      max-width: none; /* Блок занимает всю ширину */
+      width: 100%;
+      text-align: center; /* Центрируем контент блока */
+   }
+  .info-box__content { text-align: center; } /* Центрируем список */
+}

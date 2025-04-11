@@ -1,0 +1,44 @@
+/* static/css/components/_animations.css */
+/* Определения @keyframes и классы для анимаций */
+
+/* Базовый класс для анимации при скролле */
+.animate-on-scroll {
+  opacity: 0;
+  /* transition: opacity 0.8s ease-out, transform 0.8s ease-out; */ /* Можно использовать transition или animation */
+}
+
+/* Анимация появления */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Сдвиг слева */
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+
+/* Сдвиг справа */
+@keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+
+/* Масштабирование */
+@keyframes zoomIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+/* Сдвиг снизу */
+@keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Плавный отскок для кнопки */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Применение анимаций, когда элемент видим */
+.animate-on-scroll.in-view { opacity: 1; } /* Базовое появление */
+.animate-on-scroll.in-view.animate-fade { animation: fadeIn 0.8s ease-out forwards; }
+.animate-on-scroll.in-view.animate-slide-left { animation: slideInLeft 0.8s ease-out forwards; }
+.animate-on-scroll.in-view.animate-slide-right { animation: slideInRight 0.8s ease-out forwards; }
+.animate-on-scroll.in-view.animate-zoom { animation: zoomIn 0.8s ease-out forwards; }
+.animate-on-scroll.in-view.animate-slide-up { animation: slideInUp 0.8s ease-out forwards; }
+
+/* Задержки для анимированных элементов */
+.delay-1 { animation-delay: 0.1s !important; }
+.delay-2 { animation-delay: 0.2s !important; }
+.delay-3 { animation-delay: 0.3s !important; }
+/* ... и так далее по необходимости */

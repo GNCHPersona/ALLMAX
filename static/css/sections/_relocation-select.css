@@ -1,0 +1,180 @@
+.relocation-country-select-section {
+  /* padding и background заданы в _general-sections.css */
+}
+
+/* Контейнер ТОЛЬКО для селекторов */
+.country-select-holder {
+  display: flex;
+  justify-content: center; /* Центрируем группу */
+  gap: 40px; /* Отступ между селекторами */
+  align-items: flex-start;
+  /* flex-wrap: wrap; /* Не нужен, т.к. кнопка снаружи */
+  margin-bottom: 20px; /* Отступ перед кнопкой */
+  /* overflow: hidden; */
+}
+
+/* Обертка для селектора */
+.country-select-wrapper {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 350px; /* ФИКСИРОВАННАЯ ШИРИНА */
+  text-align: left;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Стили для скрытия/показа селектора "Из страны" */
+#source-country-wrapper {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+                min-width 0.4s ease-in-out, max-width 0.4s ease-in-out,
+                padding 0.4s ease-in-out, margin 0.4s ease-in-out, border 0.4s ease-in-out,
+                height 0.4s ease-in-out, min-height 0.4s ease-in-out, max-height 0.4s ease-in-out, /* Добавляем height */
+                visibility 0s linear 0.4s;
+    overflow: hidden; /* Обязательно для схлопывания */
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    width: 350px;
+    max-width: 350px;
+    min-width: 350px;
+    /* Исходная высота */
+    height: auto; /* Или высота по контенту */
+    min-height: auto; /* Или минимальная высота, если есть */
+    max-height: 150px; /* Примерное ограничение, чтобы было куда схлопываться */
+    margin: 0; padding: 0; border: 0;
+}
+
+/* Состояние, когда #source-country-wrapper СКРЫВАЕТСЯ (анимация) */
+.country-select-holder.destination-only #source-country-wrapper {
+    opacity: 0;
+    transform: scale(0.9);
+    max-width: 0;
+    min-width: 0;
+    /* ОБНУЛЯЕМ ВЫСОТУ */
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-width: 0 !important;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Анимация перемещения #destination-country-wrapper */
+/* Рассчитываем сдвиг: (Ширина source элемента + Горизонтальный gap) / 2 */
+/* При width: 350px, gap: 40px => (350 + 40) / 2 = 195px */
+.country-select-holder.destination-only #destination-country-wrapper {
+    transform: translateX(-195px); /* Сдвигаем влево */
+}
+/* При возвращении класс .destination-only убирается, transform вернется к translateX(0) из-за transition */
+
+/* Стили для контейнера кнопки "Я уже здесь" внутри flex */
+.already-here-button-container {
+    /* flex-basis: 100%; Убираем */
+    /* order: 1; Убираем */
+    width: 100%; /* Можно оставить для центрирования кнопки */
+    text-align: center; /* Центрируем кнопку */
+    margin-top: 20px; /* Восстанавливаем отступ сверху */
+    margin-bottom: 20px; /* Восстанавливаем отступ снизу */
+}
+/* Стили для самой кнопки .already-here-button находятся в _buttons.css */
+
+
+/* Блок информации о релокации */
+.relocation-info {
+  background-color: var(--color-gray-light);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  position: relative;
+  margin-top: 40px; /* Восстанавливаем отступ */
+}
+.relocation-info__inner {
+  padding: 40px;
+  padding-right: 180px; /* Место справа для кнопки прокрутки */
+  color: var(--color-text);
+  text-align: left;
+}
+.relocation-info__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  color: var(--color-black);
+  margin-bottom: 25px;
+}
+.relocation-info__details p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 15px;
+}
+.relocation-info__details p strong {
+    color: var(--color-black);
+}
+/* Стили для ul/li списка документов заданы в _typography.css */
+.relocation-cta {
+    margin-top: 15px; /* Стиль для кнопки "Оформить" в этом блоке */
+}
+
+/* Позиционирование кнопки прокрутки */
+.scroll-to-details-button {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    /* Остальные стили кнопки в _buttons.css */
+}
+
+/* Адаптивность */
+@media (max-width: 992px) { /* ... стили для планшета ... */ }
+
+@media (max-width: 768px) {
+   .country-select-holder {
+      gap: 25px;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px; /* Можно уменьшить отступ перед кнопкой */
+  }
+  .country-select-wrapper {
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      text-align: center;
+  }
+   /* Убираем сдвиг transform на мобильных */
+  .country-select-holder.destination-only #destination-country-wrapper {
+      transform: translateX(0);
+  }
+  /* Скрытие левого элемента на мобильных */
+   .country-select-holder.destination-only #source-country-wrapper {
+       /* Используем те же стили схлопывания, включая height: 0 */
+       transform: scaleY(0);
+       transform-origin: top;
+       max-height: 0;
+       min-height: 0;
+       height: 0 !important; /* Важно */
+       opacity: 0;
+       max-width: 100%;
+       min-width: 100%;
+       padding: 0 !important;
+       margin: 0 !important;
+       border: 0 !important;
+       visibility: hidden;
+       pointer-events: none;
+   }
+    /* Анимация высоты для мобильных */
+    #source-country-wrapper {
+       transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+                   min-width 0.4s ease-in-out, max-width 0.4s ease-in-out,
+                   padding 0.4s ease-in-out, margin 0.4s ease-in-out, border 0.4s ease-in-out,
+                   height 0.4s ease-in-out, max-height 0.4s ease-in-out, min-height 0.4s ease-in-out,
+                   visibility 0s linear 0.4s;
+       height: auto;
+       max-height: 150px; /* Ограничиваем высоту */
+       min-height: auto;
+   }
+
+   /* Контейнер кнопки на мобильных */
+   .already-here-button-container {
+       margin-top: 15px; /* Корректируем отступ */
+       margin-bottom: 15px;
+   }
+}

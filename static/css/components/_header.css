@@ -1,0 +1,84 @@
+/* static/css/components/_header.css */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  z-index: 1000;
+  background-color: var(--color-gray-light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px; /* Этот паддинг дублирует .container, можно убрать если .header__container всегда внутри .container */
+  max-width: 1200px; /* Тоже дублирует .container */
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-black);
+  text-decoration: none;
+}
+.nav-logo:hover {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+/* Анимация логотипа при скролле */
+.nav-logo.animate-on-scroll {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Анимация появления пунктов меню */
+.nav-menu li {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInLeft 0.8s ease-out forwards; /* Используем @keyframes из _animations.css */
+}
+.nav-menu li:nth-child(1) { animation-delay: 0.3s; }
+.nav-menu li:nth-child(2) { animation-delay: 0.4s; }
+.nav-menu li:nth-child(3) { animation-delay: 0.5s; }
+.nav-menu li:nth-child(4) { animation-delay: 0.6s; }
+.nav-menu li:nth-child(5) { animation-delay: 0.7s; }
+
+.nav-menu li a {
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--color-text);
+  display: block;
+  padding: 10px 0;
+  transition: transform 0.2s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-menu li a:hover {
+  transform: scale(1.05);
+  color: var(--color-red);
+  text-decoration: none;
+}
+
+/* Адаптивность хедера */
+@media (max-width: 768px) {
+  header { padding: 20px 0; }
+  .header__container { padding: 0 20px; }
+  .nav-menu { display: none; /* Скрываем меню */ }
+  .nav-logo { font-size: 24px; }
+  .nav-logo.animate-on-scroll { transform: translateX(0); /* Убираем анимацию сдвига */ }
+}

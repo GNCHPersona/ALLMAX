@@ -1,0 +1,57 @@
+/* static/css/sections/_general-sections.css */
+/* Общие стили отступов и фона для разных типов секций */
+
+/* Базовые отступы для большинства секций */
+.service-details-section,
+.detailed-service-section,
+.detailed-service-section-1,
+.why-choose-us-section,
+.about-section,
+.testimonials-section,
+.contact-section,
+.showcase-section,
+.relocation-country-select-section
+{
+  padding: 120px 0;
+}
+
+/* Чередование фона */
+.showcase-section,
+.service-details-section,
+.detailed-service-section,
+.testimonials-section,
+.relocation-country-select-section
+{
+   background: var(--color-gray-dark);
+}
+
+/* Секции с белым фоном (body уже белый, но можно явно указать) */
+.intro-section, /* Уже задан фон */
+.detailed-service-section-1,
+.why-choose-us-section,
+.about-section,
+.contact-section,
+.details-section /* Секции вакансий/вузов */
+{
+    background: var(--color-gray-light);
+}
+
+/* Контентные блоки внутри секций (общие стили для параграфов, h3) */
+/* Вынесено в _typography.css и _section-headings.css */
+
+
+/* Адаптивность общих отступов секций */
+@media (max-width: 768px) {
+  .service-details-section,
+  .detailed-service-section,
+  .detailed-service-section-1,
+  .why-choose-us-section,
+  .about-section,
+  .testimonials-section,
+  .contact-section,
+  .showcase-section,
+  .relocation-country-select-section
+  {
+    padding: 80px 0; /* Уменьшаем отступы на мобильных */
+  }
+}

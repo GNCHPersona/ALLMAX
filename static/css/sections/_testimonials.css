@@ -1,0 +1,45 @@
+/* static/css/sections/_testimonials.css */
+
+.testimonials-section {
+ /* padding и background заданы в _general-sections.css */
+}
+
+.testimonials-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  margin-bottom: 80px;
+  color: var(--color-black);
+  text-align: center; /* Обычно заголовок по центру */
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+/* Стили для .testimonial-block находятся в _cards.css */
+
+/* Слайдер (скрыт) */
+.slider-controls {
+  display: none;
+  text-align: center;
+  margin-top: 40px;
+}
+/* Стили для .slider-button находятся в _buttons.css */
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    /* Можно добавить стили для планшетов если нужно */
+}
+
+@media (max-width: 768px) {
+  .testimonials-section h2 {
+     font-size: 32px;
+     margin-bottom: 50px;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* Один отзыв в ряду */
+    gap: 30px;
+  }
+}

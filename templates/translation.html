@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}Перевод документов - Allmax{% endblock %}
+
+{% block head_extra %}
+    {# Стили, нужные ТОЛЬКО для страницы перевода #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_intro.css') }}">
+    {# Стили для service-details и why-choose-us секций (если нужны особые) #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_service-details.css') }}"> #}
+    {# <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_why-choose-us.css') }}"> #}
+    {# Общие стили для списков уже есть в _typography.css #}
+{% endblock %}
+
+{% block content %}
+    <!-- Intro Section для страницы услуги Перевод документов -->
+    <section class="intro-section intro-section--service"> {# Оставляем --service если нужны доп. стили #}
+      {# Используем ОБЩИЙ .container для центрирования и отступов #}
+      <div class="container">
+        <div class="intro-section__content animate-on-scroll animate-zoom">
+          <h1>Перевод документов</h1>
+          <p>Профессиональный перевод документов любой сложности и тематики.  Обеспечим точность, конфиденциальность и соблюдение сроков для ваших личных и бизнес-потребностей.</p>
+          {# Можно добавить кнопку, если нужно #}
+          {# <a href="#contact" class="cta-btn">Заказать перевод</a> #}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Секция "Подробности услуги Перевод документов" -->
+    <section class="service-details-section">
+      <div class="container"> {# Добавляем .container #}
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">01</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Что включает услуга перевода документов</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-details__content animate-on-scroll animate-slide-up">
+          <p>Наша услуга "Перевод документов" гарантирует качественный и точный перевод текстов любой сложности. Мы работаем с различными типами документов и языковыми парами, обеспечивая профессиональный результат.</p>
+          <h3>Наши ключевые направления в переводе документов:</h3>
+          <ul>
+            <li><strong>Юридический перевод:</strong>  Перевод договоров, уставов, судебных решений, юридических заключений и других документов правового характера.</li>
+            <li><strong>Технический перевод:</strong>  Перевод инструкций, технических паспортов, руководств пользователя, чертежей, спецификаций.</li>
+            <li><strong>Медицинский перевод:</strong>  Перевод медицинских заключений, историй болезни, результатов исследований, фармацевтической документации.</li>
+            <li><strong>Финансовый перевод:</strong>  Перевод бухгалтерских отчетов, финансовых документов, банковских выписок, инвестиционных проектов.</li>
+            <li><strong>Литературный перевод:</strong>  Перевод книг, статей, рекламных материалов, веб-сайтов,  и других текстов, требующих творческого подхода.</li>
+            <li><strong>Нотариальное заверение переводов:</strong>  Обеспечиваем нотариальное заверение для придания переводам юридической силы.</li>
+          </ul>
+          <p>Мы работаем с широким спектром языков и гарантируем конфиденциальность и соблюдение сроков.  Доверьте перевод ваших документов профессионалам Allmax!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Почему выбирают нас для перевода документов" -->
+    <section class="why-choose-us-section">
+      <div class="container"> {# Добавляем .container #}
+        <div class="site-offset-holder animate-on-scroll animate-fade">
+          <div class="site-offset site-offset--left">
+            <div class="section-counter">
+              <span class="section-counter__text">02</span>
+            </div>
+          </div>
+          <div class="site-offset site-offset--right">
+            <div class="headline">
+              <h2>Почему выбирают Allmax для перевода документов</h2>
+              <span class="animated-border"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-choose-us__content animate-on-scroll animate-slide-up">
+          <p>Выбирая Allmax для перевода документов, вы получаете гарантию качества, точности и профессионализма.  Мы ценим ваше время и доверие и стремимся предоставить лучший сервис.</p>
+          <ul>
+            <li><strong>Профессиональные переводчики:</strong>  В нашей команде работают опытные переводчики с лингвистическим образованием и специализацией в различных областях.</li>
+            <li><strong>Контроль качества:</strong>  Все переводы проходят тщательную проверку редактором для обеспечения максимальной точности и соответствия оригиналу.</li>
+            <li><strong>Широкий спектр языков:</strong>  Мы работаем с большинством распространенных языков мира, а также с редкими языковыми парами.</li>
+            <li><strong>Соблюдение сроков:</strong>  Мы понимаем важность времени и гарантируем выполнение переводов в оговоренные сроки.</li>
+            <li><strong>Конфиденциальность:</strong>  Мы строго соблюдаем политику конфиденциальности и гарантируем сохранность ваших данных.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+{% endblock %}

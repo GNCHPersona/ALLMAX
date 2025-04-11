@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru" class="{% block html_class %}{% endblock %}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Allmax{% endblock %}</title>
+
+  <!-- Шрифты и Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- БАЗОВЫЕ СТИЛИ -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base/_base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base/_typography.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base/_utilities.css') }}">
+
+  <!-- ОБЩИЕ КОМПОНЕНТЫ -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_preloader.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_buttons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_section-headings.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/_animations.css') }}">
+
+  <!-- ОБЩИЕ СТИЛИ СЕКЦИЙ -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_general-sections.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/sections/_contact.css') }}"> <!-- Контакты на всех страницах -->
+
+  {% block head_extra %}
+      {# Сюда будут подключаться CSS для конкретной страницы #}
+  {% endblock %}
+</head>
+<body class="is-loading">
+
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">Allmax</div>
+      <div class="preloader-text">Загрузка...</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header__container">
+      <a href="{{ url_for('index_page') }}" class="nav-logo animate-on-scroll animate-slide-right">Allmax</a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="{{ url_for('index_page') }}">Главная</a></li>
+          <li><a href="{{ url_for('index_page') }}#services">Услуги</a></li>
+          <li><a href="{{ url_for('index_page') }}#testimonials">Отзывы</a></li>
+          <li><a href="{{ url_for('index_page') }}#about">О нас</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Основной контент страницы -->
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-section__container animate-on-scroll animate-fade">
+      <h2>Свяжитесь с нами</h2>
+      <div class="contact-info">
+        <div class="info-box animate-on-scroll animate-zoom">
+          <h6 class="info-box__title">Адрес</h6>
+          <div class="info-box__content">
+            <address>
+              Улица Примерная, 123<br>
+              Город, Страна, Индекс
+            </address>
+          </div>
+        </div>
+        <div class="info-box animate-on-scroll animate-zoom">
+          <h6 class="info-box__title">Email</h6>
+          <ul class="info-box__content">
+            <li><a href="mailto:allmaxtkm@gmail.com">allmaxtkm@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="info-box animate-on-scroll animate-zoom">
+          <h6 class="info-box__title">Телефон</h6>
+          <ul class="info-box__content">
+            <li><a href="tel:+375295030924">+375295030924</a></li>
+          </ul>
+        </div>
+        <div class="info-box animate-on-scroll animate-zoom">
+          <h6 class="info-box__title">Социальные сети</h6>
+          <ul class="info-box__content">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© {{ current_year if current_year else 2024 }} Allmax. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Основной JavaScript файл -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  <!-- Блок для скриптов конкретной страницы -->
+  {% block scripts %}
+  {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* static/css/base/_typography.css */
+/* Базовые стили текста, ссылок, списков */
+
+a {
+  color: var(--color-red);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-red);
+}
+
+/* Общие стили для параграфов в контентных блоках (если нужно) - пока оставим специфичными для секций */
+/* p {
+  margin-bottom: 1.5em;
+} */
+
+/* Общие стили для списков ul/li в контентных блоках */
+.service-details__content ul,       /* TODO: Рассмотреть замену на более общий класс, если эти стили используются вне .service-details__content */
+.detailed-service__content ul,    /* Например, .content-list */
+.why-choose-us__content ul,
+.about-section__entry-text ul,
+.relocation-info__details ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.service-details__content li,
+.detailed-service__content li,
+.why-choose-us__content li,
+.about-section__entry-text li,
+#relocation-documents li
+{
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* Маркер-галочка для списков li */
+.service-details__content li::before,
+.detailed-service__content li::before,
+.why-choose-us__content li::before,
+#relocation-documents li::before
+{
+  content: "\f00c"; /* Font Awesome check icon */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--color-red);
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font-size: 14px;
+}
+
+/* Стили для h4 и p внутри li (пример: others.html) */
+.service-details__content li h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: var(--color-black);
+  margin: 0 0 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.service-details__content li h4 i {
+  color: var(--color-red);
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+.service-details__content li p { /* Параграф под h4 в li */
+   font-size: 17px;
+   margin-bottom: 0;
+   color: var(--color-text);
+   padding-left: 30px; /* Отступ параграфа */
+}
+/* Убираем маркеры у вложенных списков, если h4 используется как заголовок пункта */
+.service-details__content li ul { margin-left: 0; }
+.service-details__content li li::before { display: none; }
+
+/* Стили адреса в контактах */
+address {
+  font-style: normal;
+}

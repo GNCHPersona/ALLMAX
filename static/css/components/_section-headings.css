@@ -1,0 +1,63 @@
+/* static/css/components/_section-headings.css */
+/* Стили для общих элементов заголовков секций */
+
+.site-offset-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.section-counter {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--color-text);
+  opacity: 0.6;
+}
+
+.headline {
+ /* Может не требовать стилей, если они все в h2 и .animated-border */
+}
+
+.headline h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  color: var(--color-black);
+  margin: 0;
+  display: inline-block; /* Или block, в зависимости от макета */
+  position: relative;
+  padding-bottom: 10px; /* Место для подчеркивания */
+}
+
+.headline .animated-border {
+  position: absolute;
+  bottom: 0;
+  right: 0; /* Начальная позиция */
+  width: 0; /* Начальная ширина */
+  height: 3px;
+  background-color: var(--color-red);
+  transition: width 0.7s ease;
+}
+
+/* Анимация подчеркивания при ховере на родительский .headline */
+.headline:hover .animated-border {
+  width: 100%;
+  left: 0;
+  right: auto; /* Смена стороны для анимации слева направо */
+}
+
+/* Адаптивность заголовков секций */
+@media (max-width: 992px) {
+    .headline h2 { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .site-offset-holder {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    gap: 10px;
+  }
+  .headline h2 { font-size: 32px; }
+}
