@@ -126,55 +126,101 @@
 /* Адаптивность */
 @media (max-width: 992px) { /* ... стили для планшета ... */ }
 
+/* static/css/sections/_relocation-select.css */
+/* ... (твои существующие стили) ... */
+
 @media (max-width: 768px) {
    .country-select-holder {
-      gap: 25px;
+      gap: 20px; /* Уменьшим gap */
       flex-direction: column;
       align-items: center;
-      margin-bottom: 15px; /* Можно уменьшить отступ перед кнопкой */
+      margin-bottom: 15px;
   }
   .country-select-wrapper {
-      width: 100%;
-      min-width: 100%;
-      max-width: 100%;
+      width: 100%; /* Селекты на всю ширину */
+      max-width: 400px; /* Опционально, чтобы не были слишком широкими на планшетах */
+      min-width: unset; /* Сбросить min-width */
       text-align: center;
   }
-   /* Убираем сдвиг transform на мобильных */
+
+   /* --- КЛЮЧЕВЫЕ ИЗМЕНЕНИЯ ДЛЯ АНИМАЦИИ НА МОБИЛЬНЫХ --- */
+
+   /* Убираем горизонтальный сдвиг правого элемента, т.к. они теперь в колонке */
   .country-select-holder.destination-only #destination-country-wrapper {
-      transform: translateX(0);
+      transform: translateX(0); /* ВАЖНО: убрать сдвиг */
   }
-  /* Скрытие левого элемента на мобильных */
+
+   /* Скрытие левого элемента на мобильных: используем max-height и обнуление отступов для вертикального схлопывания */
+   #source-country-wrapper {
+       transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+                   max-height 0.4s ease-in-out, /* Добавляем max-height в transition */
+                   padding 0.4s ease-in-out, margin 0.4s ease-in-out, border 0.4s ease-in-out,
+                   visibility 0s linear 0.4s;
+       overflow: hidden; /* Нужно для схлопывания */
+       max-height: 150px; /* Исходная макс. высота (подбери по контенту) */
+       /* width, min-width, max-width уже установлены выше для .country-select-wrapper */
+       opacity: 1;
+       transform: scaleY(1); /* Используем scaleY для вертикальной анимации */
+       transform-origin: top; /* Анимация от верха */
+       visibility: visible;
+       padding: 0; margin: 0; border: 0; /* Сброс для чистоты */
+   }
+
    .country-select-holder.destination-only #source-country-wrapper {
-       /* Используем те же стили схлопывания, включая height: 0 */
-       transform: scaleY(0);
-       transform-origin: top;
-       max-height: 0;
-       min-height: 0;
-       height: 0 !important; /* Важно */
        opacity: 0;
-       max-width: 100%;
-       min-width: 100%;
-       padding: 0 !important;
-       margin: 0 !important;
-       border: 0 !important;
+       max-height: 0 !important; /* Схлопываем высоту */
+       transform: scaleY(0);
+       padding-top: 0 !important;
+       padding-bottom: 0 !important;
+       margin-top: 0 !important;
+       margin-bottom: 0 !important;
+       border-width: 0 !important;
        visibility: hidden;
        pointer-events: none;
    }
-    /* Анимация высоты для мобильных */
-    #source-country-wrapper {
-       transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
-                   min-width 0.4s ease-in-out, max-width 0.4s ease-in-out,
-                   padding 0.4s ease-in-out, margin 0.4s ease-in-out, border 0.4s ease-in-out,
-                   height 0.4s ease-in-out, max-height 0.4s ease-in-out, min-height 0.4s ease-in-out,
-                   visibility 0s linear 0.4s;
-       height: auto;
-       max-height: 150px; /* Ограничиваем высоту */
-       min-height: auto;
-   }
 
-   /* Контейнер кнопки на мобильных */
+   /* --- КОНЕЦ КЛЮЧЕВЫХ ИЗМЕНЕНИЙ ДЛЯ АНИМАЦИИ --- */
+
+
+   /* Контейнер кнопки "Я уже здесь" */
    .already-here-button-container {
-       margin-top: 15px; /* Корректируем отступ */
+       margin-top: 15px;
        margin-bottom: 15px;
    }
+
+   /* Блок информации */
+   .relocation-info__inner {
+       padding: 25px; /* Уменьшим паддинг */
+       padding-right: 25px; /* Убираем место под кнопку прокрутки или адаптируем ее */
+   }
+   .relocation-info__title {
+       font-size: 18px; /* Меньше */
+       margin-bottom: 15px;
+   }
+   .relocation-info__details p,
+   #relocation-documents li {
+       font-size: 15px; /* Меньше */
+   }
+
+   /* Кнопка прокрутки */
+   .scroll-to-details-button {
+       position: static; /* Убираем абсолютное позиционирование */
+       display: block; /* На всю ширину */
+       margin-top: 20px; /* Отступ сверху */
+       text-align: center;
+       width: auto; /* Или width: 100%; */
+   }
+   .scroll-to-details-button i { display: none; } /* Можно скрыть иконку */
+}
+
+@media (max-width: 576px) {
+     .country-select-wrapper {
+        max-width: 100%; /* На совсем маленьких экранах точно на всю ширину */
+     }
+     .relocation-info__inner {
+        padding: 20px;
+     }
+     .relocation-info__title {
+        font-size: 17px;
+     }
 }

@@ -43,10 +43,17 @@
   </div>
 
   <!-- Header -->
-  <header>
+    <!-- Header -->
+  <header id="main-header"> {# Добавим ID для удобства #}
     <div class="header__container">
       <a href="{{ url_for('index_page') }}" class="nav-logo animate-on-scroll animate-slide-right">Allmax</a>
-      <nav>
+
+      {# Кнопка Гамбургер (появляется только на мобильных) #}
+      <button class="nav-toggle" aria-label="Открыть меню">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav id="main-nav"> {# Добавим ID для удобства #}
         <ul class="nav-menu">
           <li><a href="{{ url_for('index_page') }}">Главная</a></li>
           <li><a href="{{ url_for('index_page') }}#services">Услуги</a></li>
@@ -73,8 +80,8 @@
           <h6 class="info-box__title">Адрес</h6>
           <div class="info-box__content">
             <address>
-              Улица Примерная, 123<br>
-              Город, Страна, Индекс
+              Проспект независимости 49, офис 428<br>
+              Минск, Беларусь, 220005
             </address>
           </div>
         </div>
@@ -93,9 +100,7 @@
         <div class="info-box animate-on-scroll animate-zoom">
           <h6 class="info-box__title">Социальные сети</h6>
           <ul class="info-box__content">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/by.allmax?igsh=ZGUzMzM3NWJiOQ==">Instagram</a></li>
           </ul>
         </div>
       </div>

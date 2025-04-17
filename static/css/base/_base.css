@@ -24,3 +24,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Убирает лишние отступы под картинкой */
+}

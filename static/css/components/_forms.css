@@ -87,5 +87,26 @@ select.relocation-type-select {
 @media (max-width: 768px) {
   .country-select-label {
       text-align: center;
+      font-size: 16px; /* Чуть меньше */
+      margin-bottom: 8px;
+  }
+
+  select.country-select,
+  select.relocation-type-select {
+      padding: 12px 35px 12px 15px; /* Уменьшим паддинги */
+      font-size: 16px; /* Уменьшим шрифт */
+  }
+
+  .select-arrow {
+      right: 15px; /* Подвинем стрелку */
+  }
+
+  select.relocation-type-select {
+     /* Может потребоваться调整 шрифт, если он наследуется от h2, который тоже уменьшится */
+     font-size: 24px; /* Пример, подбирать по факту */
+     padding: 6px 25px 6px 10px;
+  }
+  .select-arrow--relocation-type {
+      right: 8px;
   }
 }

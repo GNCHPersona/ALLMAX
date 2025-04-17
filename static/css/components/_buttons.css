@@ -114,3 +114,38 @@
 .details-item__link i {
     margin-right: 6px;
 }
+
+/* static/css/components/_buttons.css */
+/* ... (твои существующие стили) ... */
+
+@media (max-width: 768px) {
+    .cta-btn {
+        padding: 14px 30px;
+        font-size: 16px;
+    }
+
+    .already-here-button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .scroll-to-details-button {
+        padding: 8px 15px;
+        font-size: 13px;
+        top: 20px; /* Может понадобиться подвинуть */
+        right: 15px;
+    }
+    .scroll-to-details-button i {
+        margin-left: 5px;
+    }
+
+    .details-item__link {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .slider-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

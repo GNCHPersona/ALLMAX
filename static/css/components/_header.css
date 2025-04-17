@@ -75,10 +75,164 @@ header {
 }
 
 /* Адаптивность хедера */
-@media (max-width: 768px) {
-  header { padding: 20px 0; }
-  .header__container { padding: 0 20px; }
-  .nav-menu { display: none; /* Скрываем меню */ }
-  .nav-logo { font-size: 24px; }
-  .nav-logo.animate-on-scroll { transform: translateX(0); /* Убираем анимацию сдвига */ }
+/* static/css/components/_header.css */
+/* ... твои стили ... */
+
+/* Стили для кнопки Гамбургер */
+.nav-toggle {
+  display: none; /* Скрыт по умолчанию */
+  background: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1010; /* Выше чем nav */
 }
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  display: block;
+  background-color: var(--color-black);
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(5px); /* Учесть высоту палочки (3px) */
+}
+
+/* Стили для открытого меню (крестик) */
+.nav-open .hamburger {
+  background-color: transparent; /* Средняя палочка исчезает */
+}
+.nav-open .hamburger::before {
+  transform: rotate(45deg);
+}
+.nav-open .hamburger::after {
+  transform: translateY(-3px) rotate(-45deg); /* Сдвиг вверх и поворот */
+}
+
+
+/* Адаптивность хедера и меню */
+/* static/css/components/_header.css */
+
+/* ... (стили для десктопа и общие стили гамбургера) ... */
+
+
+/* Адаптивность хедера и меню */
+@media (max-width: 768px) {
+  /* --- ПЕРЕМЕЩЕНИЕ ХЕДЕРА ВНИЗ --- */
+ header#main-header {
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-gray-light);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+  }
+
+  /* Компенсация для контента, чтобы он не перекрывался нижним хедером */
+  /* Добавим padding-bottom к body ИЛИ к main элементу */
+  body {
+    padding-bottom: 80px;
+  }
+  /* Если у тебя есть <main>, лучше добавить к нему: */
+  /* main { padding-bottom: 80px; } */
+
+  /* --- КОНЕЦ ПЕРЕМЕЩЕНИЯ ХЕДЕРА --- */
+
+    .header__container {
+    padding: 0 20px;
+    display: flex;                 /* Включаем Flexbox */
+    justify-content: space-between; /* Разносим элементы по краям */
+    align-items: center;           /* Выравниваем по вертикали */
+  }
+
+   .nav-logo {
+    display: block; /* <<---- ВОЗВРАЩАЕМ ОТОБРАЖЕНИЕ */
+    font-size: 24px;
+    margin-right: 15px; /* Небольшой отступ справа от лого */
+  }
+  .nav-logo.animate-on-scroll { transform: translateX(0); }
+
+  /* Показываем кнопку гамбургер */
+  .nav-toggle {
+    display: block;
+    /* Можно переместить кнопку влево, если лого скрыто */
+    margin-left: 0; /* Или оставить справа */
+  }
+
+  /* Стили для навигации на мобильных */
+  nav#main-nav {
+    position: fixed;
+    /* Меню теперь должно открываться СВЕРХУ, а не сбоку */
+    bottom: 0; /* Стартует от низа */
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Занимает весь экран по высоте */
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Анимация теперь идет снизу вверх */
+    transform: translateY(100%); /* Скрыто под экраном */
+    transition: transform 0.4s ease-in-out;
+    z-index: 1005;
+    visibility: hidden;
+  }
+
+  /* Показываем навигацию при открытии */
+  .nav-open nav#main-nav {
+    transform: translateY(0); /* Появляется снизу */
+    visibility: visible;
+  }
+
+  /* Стили для списка меню на мобильных (остаются почти такими же) */
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav-menu li {
+    opacity: 1;
+    transform: translateY(0); /* Убираем старую анимацию сдвига */
+    animation: none;
+  }
+  .nav-menu li a {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-black);
+  }
+  .nav-menu li a:hover {
+    transform: none;
+    color: var(--color-red);
+  }
+
+  /* Блокируем скролл страницы при открытом меню */
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* Стили для кнопки Гамбургер (остаются прежними) */
+    /* .nav-toggle { ... } */
+    /* .hamburger, .hamburger::before, .hamburger::after { ... } */
+    /* .nav-open .hamburger { ... } и т.д. */
+
+} /* Конец @media (max-width: 768px) */

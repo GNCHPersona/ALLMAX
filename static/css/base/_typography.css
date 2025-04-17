@@ -88,3 +88,71 @@ a:hover {
 address {
   font-style: normal;
 }
+
+/* static/css/base/_typography.css */
+/* ... твои стили ... */
+
+@media (max-width: 768px) {
+  /* Уменьшаем базовый размер шрифта для параграфов, если он велик */
+  /* body { font-size: 16px; } */ /* Если не задан глобально, можно здесь */
+
+  p { /* Если есть общие стили для P, или стилизуем внутри секций */
+      font-size: 16px; /* Убедимся, что не слишком мелко/крупно */
+      line-height: 1.7; /* Увеличим немного межстрочный интервал */
+      margin-bottom: 1em; /* Стандартный отступ */
+  }
+
+  /* Списки */
+  .service-details__content li,
+  .detailed-service__content li,
+  .why-choose-us__content li,
+  .about-section__entry-text li,
+  #relocation-documents li {
+      font-size: 16px; /* Немного меньше */
+      line-height: 1.65;
+      padding-left: 22px; /* Чуть меньше отступ */
+      margin-bottom: 12px;
+  }
+  .service-details__content li::before,
+  .detailed-service__content li::before,
+  .why-choose-us__content li::before,
+  #relocation-documents li::before {
+      top: 5px; /* Подравнять иконку */
+      font-size: 13px;
+  }
+
+  /* Заголовки внутри списков */
+  .service-details__content li h4 {
+      font-size: 17px;
+      margin-bottom: 3px;
+  }
+   .service-details__content li h4 i {
+      font-size: 15px;
+   }
+   .service-details__content li p {
+       font-size: 15px;
+       padding-left: 0; /* Уберем доп. отступ у параграфа в списке на мобильных */
+       line-height: 1.6;
+   }
+
+   /* Текст в блоке about */
+   .about-section__entry-text p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #666; /* Чуть светлее можно */
+   }
+}
+
+@media (max-width: 576px) {
+    p { font-size: 15px; line-height: 1.65; }
+    .service-details__content li,
+    .detailed-service__content li,
+    .why-choose-us__content li,
+    .about-section__entry-text li,
+    #relocation-documents li {
+        font-size: 15px;
+    }
+     .about-section__entry-text p {
+        font-size: 16px;
+     }
+}

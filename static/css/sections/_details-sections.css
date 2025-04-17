@@ -19,7 +19,7 @@
 .details-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 45px;
+    gap: 60px;
     max-width: 1200px; /* Ограничение ширины */
     margin: 0 auto; /* Центрирование */
     padding: 0 20px; /* Отступы по бокам */
@@ -36,8 +36,49 @@
     color: #777; /* Мягкий цвет */
 }
 
-/* Адаптивность секций деталей */
+/* static/css/sections/_details-sections.css */
+/* ... (твои существующие стили) ... */
+
 @media (max-width: 768px) {
-  .details-section__title { font-size: 24px; }
-  .details-list { grid-template-columns: 1fr; padding: 0 15px; }
+  .details-section {
+      padding: 50px 0; /* Уменьшим отступы */
+      margin-top: 30px;
+  }
+  .details-section__title {
+      font-size: 24px; /* Меньше */
+      margin-bottom: 30px;
+  }
+  .details-list {
+    grid-template-columns: 1fr;
+    /* Увеличиваем GAP ЗНАЧИТЕЛЬНО */
+    gap: 40px; /* <<---- ПОПРОБУЕМ ЭТО ЗНАЧЕНИЕ */
+    /* row-gap: 40px; */ /* Можно явно указать row-gap */
+    /* column-gap: 0; */ /* Не нужен при одной колонке */
+    padding: 0 15px;
+    max-width: 500px;
+  }
+  .details-item {
+      padding: 20px;
+      margin-bottom: 0; /* Убедимся, что нет лишних отступов, gap должен рулить */
+  }
+
+  .no-details-message {
+      font-size: 16px;
+  }
 }
+
+@media (max-width: 576px) {
+    .details-list {
+        padding: 0 10px;
+        gap: 50px;
+    }
+    .details-item { /* Стили карточки из _cards.css, но можно переопределить тут */
+        padding: 20px;
+    }
+    .details-item__title {
+        font-size: 18px;
+    }
+    .details-item__description {
+        font-size: 15px;
+    }
+}}
