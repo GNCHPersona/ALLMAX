@@ -6,6 +6,8 @@
     "turkmenistan": "Туркменистан",
     "russia": "Россия",
     "belarus": "Беларусь",
+    "poland": "Польша",
+    "other": "Другая",
     "": "Выберите страну"
   },
   "relocation_types": {
@@ -15,86 +17,153 @@
   "relocation_details": {
     "career": {
       "bangladesh-belarus": {
-        "price": "от 2008$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
       },
       "russia-belarus": {
-        "price": "от 100.000₽ (ПРИМЕР)",
+        "price": "от 100.000₽",
         "documents": ["Паспорт", "Разрешение на работу", "Медицинская страховка"]
       },
-      "belarus-russia": {
-        "price": "от 6000 Byn (ПРИМЕР)",
+      "other-belarus": {
+        "price": "от 3500$",
         "documents": ["Паспорт", "Разрешение на работу", "Медицинская страховка"]
       },
       "nepal-belarus": {
-        "price": "от 2013$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
       },
       "india-belarus": {
-        "price": "от 2025$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
       },
       "turkmenistan-belarus": {
-        "price": "от 2003$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
       },
+      "bangladesh-poland": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
+      },
+      "russia-poland": {
+        "price": "от 100.000₽",
+        "documents": ["Паспорт", "Разрешение на работу", "Медицинская страховка"]
+      },
+      "other-poland": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Разрешение на работу", "Медицинская страховка"]
+      },
+      "nepal-poland": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
+      },
+      "india-poland": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
+      },
+      "turkmenistan-poland": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
+      },
+      "belarus-poland": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Виза", "Разрешение на работу", "Медицинская страховка"]
+      },
+      "belarus-russia": {
+        "price": "от 9000 Byn",
+        "documents": ["Паспорт", "Разрешение на работу", "Медицинская страховка"]
+      },
+      "other-russia": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Разрешение на работу", "Медицинская страховка"]
+      },
       "bangladesh-russia": {
-        "price": "от 2500$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Рабочая виза", "Подтверждение квалификации", "Миграционная карта"]
       },
       "nepal-russia": {
-        "price": "от 2900$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Рабочая виза", "Подтверждение квалификации", "Миграционная карта"]
       },
       "india-russia": {
-        "price": "от 2200$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Рабочая виза", "Подтверждение квалификации", "Миграционная карта"]
       },
       "turkmenistan-russia": {
-        "price": "от 2500$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Рабочая виза", "Подтверждение квалификации", "Миграционная карта"]
       }
     },
     "education": {
+      "turkmenistan-belarus": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Виза", "Справка об образовании", "Медицинская страховка"]
+      },
       "bangladesh-belarus": {
-        "price": "от 2999$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
       },
       "russia-belarus": {
-        "price": "от 100.000₽ (ПРИМЕР)",
+        "price": "от 100.000₽",
         "documents": ["Паспорт", "Студенческая виза", "Переводы документов"]
       },
-      "belarus-russia": {
-        "price": "от 6000 Byn (ПРИМЕР)",
-        "documents": ["Паспорт", "Студенческая виза", "Переводы документов"]
-      },
-
       "nepal-belarus": {
-        "price": "от 2015$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
       },
       "india-belarus": {
-        "price": "от 2100$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
       },
+      "other-belarus": {
+        "price": "от 3500$",
+        "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
+      },
+      "turkmenistan-poland": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Виза", "Справка об образовании", "Медицинская страховка"]
+      },
+      "other-poland": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Виза", "Справка об образовании", "Медицинская страховка"]
+      },
+      "bangladesh-poland": {
+        "price": "от 3500$",
+        "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
+      },
+      "russia-poland": {
+        "price": "от 100.000₽",
+        "documents": ["Паспорт", "Студенческая виза", "Переводы документов"]
+      },
+      "nepal-poland": {
+        "price": "от 3500$",
+        "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
+      },
+      "india-poland": {
+        "price": "от 3500$",
+        "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
+      },
+      "belarus-russia": {
+        "price": "от 9000 Byn",
+        "documents": ["Паспорт", "Студенческая виза", "Переводы документов"]
+      },
+      "other-russia": {
+        "price": "от 3500$",
+        "documents": ["Паспорт", "Студенческая виза", "Переводы документов"]
+      },
       "bangladesh-russia": {
-        "price": "от 2503$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
       },
       "nepal-russia": {
-        "price": "от 2500$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Рабочая виза", "Подтверждение квалификации", "Миграционная карта"]
       },
-      "turkmenistan-belarus": {
-        "price": "от 1500$ (ПРИМЕР)",
-        "documents": ["Паспорт", "Виза", "Справка об образовании", "Медицинская страховка"]
-      },
       "india-russia": {
-        "price": "от 1800$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Студенческая виза", "Переводы документов", "Регистрация по месту пребывания"]
       },
       "turkmenistan-russia": {
-        "price": "от 1700$ (ПРИМЕР)",
+        "price": "от 3500$",
         "documents": ["Загранпаспорт", "Студ. Виза", "Аттестат/Диплом", "Приглашение от ВУЗа"]
       }
     }
@@ -103,41 +172,49 @@
     "russia": [
       {
         "id": "vac_rus_1",
-        "title": "Инженер-программист (ПРИМЕР ВАКАНСИИ)",
-        "description": "Требуется разработчик Python/Django. Опыт от 2 лет. Задачи по разработке веб-сервисов.",
-        "order_file_url": "/static/docs/vacancies/russia/order_programmer_moscow.pdf"
-      },
+        "title": "Здесь пока нет вакансий.",
+        "description": "Здесь пока нет вакансий.",
+        "order_file_url": null
+      }
+    ],
+    "poland": [
       {
-        "id": "vac_rus_2",
-        "title": "ЗДЕСЬ НАХОДИТСЯ НАЗВАНИЕ ЕЩЕ ОДНОЙ ВАКАНСИИ",
-        "description": "ЗДЕСЬ БУДЕТ ОПИСАНИЕ ЕЩЁ ОДНОЙ ВАКАНСИИ",
-        "order_file_url": "/static/docs/vacancies/russia/order_sales_spb.pdf"
+        "id": "vac_pol_1",
+        "title": "Здесь пока нет вакансий.",
+        "description": "Здесь пока нет вакансий.",
+        "order_file_url": null
       }
     ],
     "belarus": [
       {
         "id": "vac_bel_1",
         "title": "Сортировщик вторичного сырья (Минск)",
-        "description": "Возраст 25-50 лет. Рост от 160 см. Только мужчины",
-        "order_file_url": "/static/docs/vacancies/belarus/sortirovshik_vtor_siriya.pdf"
+        "description": "Минск. Мужчины 25-50. ЗП 1220 BYN + оплата перелета и помощь на старте.",
+        "order_file_url": "/static/docs/vacancies/belarus/sortirovshchik_vs.docx"
       },
       {
         "id": "vac_bel_2",
         "title": "Обработчик птицы/Изготовитель полуфабрикатов",
-        "description": "Возраст 26-45 лет. Образование не ниже среднего.",
-        "order_file_url": "/static/docs/vacancies/belarus/obrabotchik_pcici.doc"
+        "description": "Обработка птицы. Возраст 26-45 лет. Сдельная ЗП, до 3500 BYN. Бесплатное жилье, питание, проезд.",
+        "order_file_url": "/static/docs/vacancies/belarus/obrabotchik_pticy.docx"
       },
       {
         "id": "vac_bel_3",
         "title": "Каменщик, плотник, бетонщик",
-        "description": "Нет особых требований.",
-        "order_file_url": "/static/docs/vacancies/belarus/kamenshiki.doc"
+        "description": "Лида. Сдельная оплата труда. Предоставляется жилье и обеды.",
+        "order_file_url": "/static/docs/vacancies/belarus/kamenshchik.docx"
+      },
+      {
+        "id": "vac_bel_5",
+        "title": "Швея. Обувная швея",
+        "description": "Могилев. Требуется швея с опытом работы. ЗП 400$−500$. Предоставляется бесплатное жилье и обеды.",
+        "order_file_url": "/static/docs/vacancies/belarus/shveya_mogilev.docx"
       },
       {
         "id": "vac_bel_4",
         "title": "Машинист экскаватора",
-        "description": "Нет особых требований.",
-        "order_file_url": "/static/docs/vacancies/belarus/mashinist.pdf"
+        "description": "Слоним. Требуется машинист экскаватора с опытом и удостоверением. ЗП 1800 BYN.",
+        "order_file_url": "/static/docs/vacancies/belarus/mashinist_ekskavatora.docx"
       }
     ]
   },
@@ -145,29 +222,126 @@
     "russia": [
       {
         "id": "edu_rus_1",
-        "name": "Московский Государственный Университет (ПРИМЕР)",
-        "description": "Широкий выбор факультетов: от гуманитарных до естественных наук. Ведущий ВУЗ страны.",
-        "details_url": "https://www.msu.ru/"
-      },
+        "name": "Здесь пока нет доступных университетов.",
+        "description": "Здесь пока нет доступных университетов.",
+        "order_file_url": null,
+        "accepted_countries": ["russia", "belarus", "turkmenistan", "india", "nepal", "bangladesh"]
+      }
+    ],
+    "poland": [
       {
-        "id": "edu_rus_2",
-        "name": "Санкт-Петербургский Государственный Университет (ПРИМЕР)",
-        "description": "Классическое университетское образование. Сильные программы по физике, математике, праву.",
-        "details_url": "https://spbu.ru/"
+        "id": "edu_pol_1",
+        "name": "Здесь пока нет доступных университетов.",
+        "description": "Здесь пока нет доступных университетов.",
+        "order_file_url": null,
+        "accepted_countries": ["russia", "belarus", "turkmenistan", "india", "nepal", "bangladesh"]
       }
     ],
     "belarus": [
       {
-        "id": "edu_bel_1",
-        "name": "Белорусский Государственный Университет (ПРИМЕР)",
-        "description": "Крупнейший университет Беларуси. Множество специальностей, научные школы.",
-        "details_url": "https://bsu.by/"
+        "id": "edu_bel_vgavm",
+        "name": "УО «Витебская ордена «Знак Почета» государственная академия ветеринарной медицины»",
+        "description": "Витебск. Ветеринария и смежные специальности.",
+        "order_file_url": null,
+        "accepted_countries": ["india", "pakistan", "nepal", "bangladesh"]
+      },
+      {
+        "id": "edu_bel_vgmu",
+        "name": "Витебский государственный медицинский университет",
+        "description": "Витебск. Медицинское образование.",
+        "order_file_url": "/static/docs/colleges/belarus/vgmy.docx",
+        "accepted_countries": ["india", "pakistan", "nepal", "bangladesh"]
+      },
+      {
+        "id": "edu_bel_iseu",
+        "name": "УО \"Международный государственный экологический институт имени А. Д. Сахарова\" БГУ",
+        "description": "Минск. Экологические специальности.",
+        "order_file_url": null,
+        "accepted_countries": ["india"]
+      },
+      {
+        "id": "edu_bel_bstu",
+        "name": "УО \"Белорусский государственный технологический университет\"",
+        "description": "Минск. Технологии, химическая промышленность, лесное хозяйство.",
+        "order_file_url": null,
+        "accepted_countries": ["india"]
+      },
+      {
+        "id": "edu_bel_msu_kulehov",
+        "name": "УО \"Могилевский государственный университет имени А. А. Кулешова\"",
+        "description": "Могилев. Педагогические, гуманитарные и естественные науки.",
+        "order_file_url": null,
+        "accepted_countries": ["india", "nepal", "bangladesh"]
+      },
+      {
+        "id": "edu_bel_bru",
+        "name": "Межгосударственное образовательное учреждение высшего образования «Белорусско-Российский университет»",
+        "description": "Могилев. Технические и экономические специальности.",
+        "order_file_url": null,
+        "accepted_countries": ["india", "nepal"]
+      },
+      {
+        "id": "edu_bel_bsac",
+        "name": "УО \"Белорусская Государственная Академия Связи\"",
+        "description": "Минск. Связь, телекоммуникации, информационные технологии.",
+        "order_file_url": null,
+        "accepted_countries": ["india", "pakistan", "nepal", "bangladesh"]
+      },
+      {
+        "id": "edu_bel_grsu_main",
+        "name": "УО \"Гродненский Государственный университет имени Янки Купалы\"",
+        "description": "Гродно. Широкий спектр специальностей.",
+        "order_file_url": "/static/docs/colleges/belarus/grgyiyak.docx",
+        "accepted_countries": []
+      },
+      {
+        "id": "edu_bel_grsu_humcoll",
+        "name": "Гуманитарный колледж УО \"Гродненский Государственный университет имени Янки Купалы\"",
+        "description": "Гродно. Среднее специальное образование.",
+        "order_file_url": null,
+        "accepted_countries": ["india"]
       },
        {
-        "id": "edu_bel_2",
-        "name": "Белорусский Государственный Университет Информатики и Радиоэлектроники (ПРИМЕР)",
-        "description": "Ведущий технический ВУЗ в области IT, радиотехники и электроники.",
-        "details_url": "https://www.bsuir.by/"
+        "id": "edu_bel_bteu",
+        "name": "УО \"Белорусский торгово-экономический университет потребительской кооперации\"",
+        "description": "Гомель. Экономика, торговля, логистика.",
+        "order_file_url": null,
+        "accepted_countries": ["india", "nepal"]
+      },
+      {
+        "id": "edu_bel_bsupc",
+        "name": "УО \"Белорусский государственный университет физической культуры\"",
+        "description": "Минск. Физическая культура, спорт, туризм.",
+        "order_file_url": null,
+        "accepted_countries": ["india", "pakistan", "nepal"]
+      },
+      {
+        "id": "edu_bel_bsu",
+        "name": "Белорусский государственный университет",
+        "description": "Минск. Ведущий классический университет.",
+        "order_file_url": "/static/docs/colleges/belarus/bgy.docx",
+        "accepted_countries": ["india"]
+      },
+      {
+        "id": "edu_bel_gsu_skoriny",
+        "name": "Гомельский государственный университет имени Франциска Скорины",
+        "order_file_url": "/static/docs/colleges/belarus/ggyifs.docx",
+        "details_url": "https://gsu.by/",
+        "accepted_countries": ["india"]
+      },
+      {
+        "id": "edu_bel_psu",
+        "name": "Полоцкий государственный университет имени Евфросинии Полоцкой",
+        "description": "Полоцк/Новополоцк. Инженерные, гуманитарные, экономические специальности.",
+        "order_file_url": null,
+        "accepted_countries": ["india"]
+      },
+      {
+        "id": "edu_bel_bntu",
+        "name": "Белорусский национальный технический университет",
+        "description": "Минск. Ведущий технический ВУЗ.",
+        "order_file_url": "/static/docs/colleges/belarus/bnty.docx",
+        "accepted_countries": ["india"]
       }
     ]
   }
