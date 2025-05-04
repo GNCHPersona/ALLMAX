@@ -325,8 +325,8 @@
       {
         "id": "edu_bel_gsu_skoriny",
         "name": "Гомельский государственный университет имени Франциска Скорины",
+        "description": "Гомель. Ведущий классический университет.",
         "order_file_url": "/static/docs/colleges/belarus/ggyifs.docx",
-        "details_url": "https://gsu.by/",
         "accepted_countries": ["india"]
       },
       {
